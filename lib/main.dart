@@ -45,26 +45,28 @@ class HomeScreen extends StatelessWidget{
 */
 
      body: Column(                                  // MULTIPLE WIDGET - Column / Row
+       mainAxisAlignment: MainAxisAlignment.center,
+       crossAxisAlignment: CrossAxisAlignment.end,
+
        children: [
+        Text('Hello!!'),
+        Text('Ayesha'),
+        Text('Ferdous'),
+        Text('Sadia'),
 
-         Text("Home Screen", style: TextStyle(
-             color:  Colors.white,
-             fontSize: 30,
-             fontWeight: FontWeight.bold
-         ),),
+         Row(
+     mainAxisAlignment: MainAxisAlignment.center,
+     crossAxisAlignment: CrossAxisAlignment.center,
 
-         Text("Home", style: TextStyle(
-             color:  Colors.white,
-             fontSize: 26,
-             fontWeight: FontWeight.bold
-         ),),
-
-         Text('Hello'),
-         Icon(Icons.adb_outlined, color: Colors.amber, size: 80,)
-
+     children: [
+    Text('Hello!! '),
+    Text('Ayesha '),
+    Text('Ferdous '),
+    Text('Sadia '),
+        ]
+         )
        ],
      ),
-
    );
   }
 }
