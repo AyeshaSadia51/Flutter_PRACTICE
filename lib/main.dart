@@ -29,9 +29,9 @@ class HomeScreen extends StatelessWidget{
 
     appBar: AppBar(
       backgroundColor: Colors.pinkAccent,
-    centerTitle: true,
-    title: Text("HOME"),
-    leading: Icon(Icons.store, size: 36, color: Colors.yellow,), 
+      centerTitle: true,
+      title: Text("HOME"),
+      leading: Icon(Icons.store, size: 36, color: Colors.yellow,),
       actions: [
         Icon(Icons.search,size: 36, color: Colors.yellow)
       ],
