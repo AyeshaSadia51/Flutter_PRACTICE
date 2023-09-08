@@ -104,10 +104,44 @@ class HomeScreen extends StatelessWidget{
            ],
          ),
 
-         Image.asset('images/BabyPic.jpeg',width: 150,height: 165, fit: BoxFit.cover,),
+         Image.asset('images/BabyPic.jpeg',
+           width: 150,height: 165, fit: BoxFit.cover,),
          Image.network('https://c4.wallpaperflare.com/wallpaper/101/380/61/cat-animals-bokeh-cute-wallpaper-preview.jpg',
                         width: 350, height: 200, fit:BoxFit.cover,
           ),
+
+         RichText(text: TextSpan(
+           text: 'My ',
+           style: TextStyle(
+             color: Colors.red,
+             fontSize: 30
+           ),
+
+         children: [
+           TextSpan(
+             text: 'phone ',
+             style: TextStyle(
+              color: Colors.blueAccent,
+               fontSize: 18
+             )
+           ),
+           TextSpan(
+             text: 'name',
+             style: TextStyle(
+               color: Colors.pinkAccent,
+               fontWeight: FontWeight.bold,
+               fontSize: 22
+             )
+           ),
+           TextSpan(
+             text: 'Your Phone name',
+             style: TextStyle(
+               color: Colors.amber,
+               //fontSize: 30
+             )
+           ),
+         ]
+         ))
        ],
      ),
    );
