@@ -44,26 +44,64 @@ class HomeScreen extends StatelessWidget{
     ),
 */
 
-     body: Column(                                  // MULTIPLE WIDGET - Column / Row
-       mainAxisAlignment: MainAxisAlignment.center,
-       crossAxisAlignment: CrossAxisAlignment.end,
-
+     body: Column(
        children: [
-        Text('Hello!!'),
-        Text('Ayesha'),
-        Text('Ferdous'),
-        Text('Sadia'),
+         Column(                                  // MULTIPLE WIDGET - Column / Row
+           mainAxisAlignment: MainAxisAlignment.center,
+           crossAxisAlignment: CrossAxisAlignment.end,
 
-         Row(
-     mainAxisAlignment: MainAxisAlignment.center,
-     crossAxisAlignment: CrossAxisAlignment.center,
+           children: [
+            Text('Hello!!'),
+            Text('Ayesha', style: TextStyle(
+                color: Colors.amber,fontWeight: FontWeight.bold
+            ),),
 
-     children: [
+            Text('Ferdous', style: TextStyle(
+                color: Colors.amber,fontWeight: FontWeight.bold
+            ),),
+
+             Text('Sadia', style: TextStyle(
+                color: Colors.amber,fontWeight: FontWeight.bold
+            ),),
+
+             Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         crossAxisAlignment: CrossAxisAlignment.center,
+
+         children: [
     Text('Hello!! '),
-    Text('Ayesha '),
-    Text('Ferdous '),
-    Text('Sadia '),
-        ]
+    Text('Ayesha ', style: TextStyle(
+      color: Colors.amber,fontWeight: FontWeight.bold
+    ),),
+
+     Text('Ferdous ', style: TextStyle(
+        color: Colors.amber,fontWeight: FontWeight.bold
+    ),),
+
+    Text('Sadia ', style: TextStyle(
+    color: Colors.amber,fontWeight: FontWeight.bold
+    ),),
+            ]
+             )
+           ],
+         ),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             Text('Student of '),
+             Text('Leading '),
+             Text('University ')
+           ],
+         ),
+         Column(
+           children: [
+             Text('Department: ', style: TextStyle(
+             color: Colors.white, fontWeight: FontWeight.bold
+         ),),
+             Text('CSE', style: TextStyle(
+                 color: Colors.limeAccent, fontWeight: FontWeight.bold
+             ),),
+           ],
          )
        ],
      ),
