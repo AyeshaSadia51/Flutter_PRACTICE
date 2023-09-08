@@ -102,7 +102,12 @@ class HomeScreen extends StatelessWidget{
                  color: Colors.limeAccent, fontWeight: FontWeight.bold
              ),),
            ],
-         )
+         ),
+
+         Image.asset('images/BabyPic.jpeg',width: 150,height: 165, fit: BoxFit.cover,),
+         Image.network('https://c4.wallpaperflare.com/wallpaper/101/380/61/cat-animals-bokeh-cute-wallpaper-preview.jpg',
+                        width: 350, height: 200, fit:BoxFit.cover,
+          ),
        ],
      ),
    );
