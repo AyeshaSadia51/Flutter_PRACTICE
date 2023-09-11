@@ -19,8 +19,9 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: Text('Profile',style: TextStyle(fontSize: 25),),
+        title: Text('BKash Profile',style: TextStyle(fontSize: 25),),
         leading: Icon(Icons.person,size: 32,),
         actions: [Icon(Icons.add_ic_call,size: 32,)],
       ),
