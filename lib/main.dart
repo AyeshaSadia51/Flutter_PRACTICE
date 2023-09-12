@@ -68,8 +68,46 @@ class HomeScreen extends StatelessWidget{
                 ),
                 child: Text('Outline Button')),
 
-            TextField(),
+            TextField(
+              style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),
+              decoration: InputDecoration(
+                fillColor: Colors.pinkAccent,
+                filled: true,
+                hintText: 'Enter your @userID',
+                hintStyle: TextStyle(color: Colors.white70),
+                label: Text('UserID'),
+                labelStyle: TextStyle(color: Colors.white,fontSize: 20),
+                suffixIcon: Icon(Icons.person,color: Colors.white,),
+              ),
+            ),
 
+            SizedBox(
+              height: 10,
+            ),
+
+            TextField(
+              obscureText: true,
+              style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),
+              decoration: InputDecoration(
+                fillColor: Colors.pinkAccent,
+                filled: true,
+                hintText: 'Enter your password',
+                hintStyle: TextStyle(color: Colors.white70),
+                label: Text('Password'),
+                labelStyle: TextStyle(color: Colors.white,fontSize: 20),
+                suffixIcon: Icon(Icons.password,color: Colors.white,),
+                border: OutlineInputBorder(),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white)
+                ),
+                disabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.red)
+            ),
+                focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green)
+                  )
+              ),
+            ),
           ],
         ),
       ),
