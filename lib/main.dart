@@ -68,6 +68,7 @@ class HomeScreen extends StatelessWidget{
                 ),
                 child: Text('Outline Button')),
 
+
             TextField(
               style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),
               decoration: InputDecoration(
@@ -108,6 +109,7 @@ class HomeScreen extends StatelessWidget{
                   )
               ),
             ),
+
           ],
         ),
       ),
