@@ -139,6 +139,8 @@ class HomeScreen extends StatelessWidget{
                 style: TextStyle(fontSize: 22, color: Colors.pink),),
               Text('Ayesha',
                 style: TextStyle(fontSize: 22, color: Colors.pink),),
+              Text('Ayesha',
+                style: TextStyle(fontSize: 22, color: Colors.pink),),
 
             ],
           ),
