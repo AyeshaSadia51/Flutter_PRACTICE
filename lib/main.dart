@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget{
         actions: [Icon(Icons.contact_page,size: 25,)],
       ),
 
-       body: Center(
+       /*body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -59,7 +59,9 @@ class HomeScreen extends StatelessWidget{
             ),
           ],
         ),
-      ),
+      ),*/
+
+
     );
   }
 }
