@@ -25,43 +25,6 @@ class HomeScreen extends StatelessWidget{
         actions: [Icon(Icons.child_care,size: 25,)],
       ),
 
-       /*body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: (){
-                print('Tapped on Ayesha');
-              },
-              onDoubleTap: (){
-                print('Double Tapped');
-              },
-              onLongPress: (){
-                print('Long Press');
-              },
-              child: Text('Ayesha', style: TextStyle(
-                fontSize: 30, color: Colors.deepOrange
-              ),),
-            ),
-            InkWell(
-              onTap: (){
-                print('Tapped on Sadia');
-              },
-              onDoubleTap: (){
-                print('Double Tapped');
-              },
-              onLongPress: (){
-                print('Long Press');
-              },
-              borderRadius: BorderRadius.circular(16),
-              child: Text('Sadia', style: TextStyle(
-                  fontSize: 28, color: Colors.purple
-              ),),
-            ),
-          ],
-        ),
-      ),*/
-
       body: Scrollbar(
         thickness: 15,
         radius: Radius.circular(20),
