@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget{
                 onTap: (){print('Moblile No Pressed');},
               ),
               Divider(
-                thickness: 4,
+                thickness: 3,
                 height: 16,
                 color: Colors.blueGrey,
                 indent: 18,
@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget{
                 onTap: (){print('Email Pressed');},
               ),
               Divider(
-                thickness: 4,
+                thickness: 3,
                 height: 16,
                 color: Colors.blueGrey,
                 indent: 18,
@@ -128,7 +128,6 @@ class HomeScreen extends StatelessWidget{
                     ),
                     child: Text('Log In')),
               ),
-
 
               Text('Ayesha',
                 style: TextStyle(fontSize: 22, color: Colors.pink),),
@@ -180,6 +179,8 @@ class HomeScreen extends StatelessWidget{
 
             ],
           ),
+
+
 
       ),
 
