@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List',style: TextStyle(
+        title: Text('Contact List',style: TextStyle(
             fontSize: 25
         ),),
         actions: [Icon(Icons.contact_page,size: 25,)],
@@ -60,11 +60,6 @@ class HomeScreen extends StatelessWidget{
           ],
         ),
       ),
-
-
-
-
-
     );
   }
 }
