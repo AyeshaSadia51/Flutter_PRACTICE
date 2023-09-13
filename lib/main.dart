@@ -126,7 +126,6 @@ class HomeScreen extends StatelessWidget{
                     color: Colors.black, fontSize: 28
                 ),),
               ),
-
             ],
           )
       ),
