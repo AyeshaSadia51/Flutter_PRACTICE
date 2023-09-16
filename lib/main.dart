@@ -75,8 +75,10 @@ class SettingsScreen extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.pushAndRemoveUntil(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        (route) => false,
+                    );
                   },
                   child: Text('Go to Home'),
                 style: ElevatedButton.styleFrom(
@@ -109,7 +111,8 @@ class OrderScreen extends StatelessWidget {
               ),
               TextButton(
                   onPressed: (){
-                    Navigator.push(context,
+                    Navigator.pushReplacement(
+                        context,
                         MaterialPageRoute(builder: (context) => SettingsScreen()));
                   },
                   child: Text('Go to Settings', style: TextStyle(
