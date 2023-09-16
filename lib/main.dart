@@ -14,85 +14,79 @@ class MyApp extends StatelessWidget{
   }
 }
 class HomeScreen extends StatelessWidget{
+
+  List<String> studentName = ['Ayesha','Ferdous','Sadia','Tanvir','Shakib','Shakil','Jawad','Rabeya','Jannat'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text('Circus',style: TextStyle(
+        title: Text('List',style: TextStyle(
             fontSize: 26
         ),),
-        actions: [Icon(Icons.child_care,size: 25,)],
+        leading: Icon(Icons.list_alt,size: 25,),
+        actions: [Icon(Icons.arrow_forward,size: 25,)],
       ),
 
       body: Scrollbar(
         thickness: 15,
         radius: Radius.circular(20),
-          child: GridView(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2
-            ),
-            children: [
-              Image.network('https://as2.ftcdn.net/v2/jpg/02/66/31/75/1000_F_266317554_kr7DPOoM5Uty0YCeFU9nDZTt4a2LeMJF.jpg'),
-              Center(
-                child: Text('Lets Rock', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as2.ftcdn.net/v2/jpg/00/74/15/95/1000_F_74159556_67n5823V7Ei87a4g6JJnYHC0yMSo1AEy.jpg'),
-              Center(
-                child: Text('Lets Chill', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as2.ftcdn.net/v2/jpg/02/66/31/75/1000_F_266317554_kr7DPOoM5Uty0YCeFU9nDZTt4a2LeMJF.jpg'),
-              Center(
-                child: Text('Lets Rock', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as1.ftcdn.net/v2/jpg/00/28/08/40/1000_F_28084010_bGRJetPfBwNcO3YuRC2C3Pz7qASocWQ4.jpg'),
-              Center(
-                child: Text('Say Cheeeeeezzzz', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as2.ftcdn.net/v2/jpg/02/66/31/75/1000_F_266317554_kr7DPOoM5Uty0YCeFU9nDZTt4a2LeMJF.jpg'),
-              Center(
-                child: Text('Lets Rock', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as2.ftcdn.net/v2/jpg/00/74/15/95/1000_F_74159556_67n5823V7Ei87a4g6JJnYHC0yMSo1AEy.jpg'),
-              Center(
-                child: Text('Lets Chill', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as2.ftcdn.net/v2/jpg/02/66/31/75/1000_F_266317554_kr7DPOoM5Uty0YCeFU9nDZTt4a2LeMJF.jpg'),
-              Center(
-                child: Text('Lets Rock', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown, fontSize: 28
-                ),),
-              ),
-              Image.network('https://as1.ftcdn.net/v2/jpg/00/28/08/40/1000_F_28084010_bGRJetPfBwNcO3YuRC2C3Pz7qASocWQ4.jpg'),
-              Center(
-                child: Text('Say Cheeeeeezzzz', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black, fontSize: 28
-                ),),
-              ),
-            ],
-          )
-      ),
 
+        // GRIDVIEW BUILDER
+        /* child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3
+              ),
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Text(' Monkey No - ${index.toString()}', style: TextStyle(fontWeight: FontWeight.bold),),
+                    Image.network('https://as1.ftcdn.net/v2/jpg/00/28/08/40/1000_F_28084010_bGRJetPfBwNcO3YuRC2C3Pz7qASocWQ4.jpg',
+                    height: 100,
+                    ),
+                  ],
+                );
+              }
+          )     */
+
+        // LISTVIEW BUILDER
+        /*child: ListView.builder(
+          itemCount: 20,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text('Student No - $index'),
+              );
+            }
+        ),*/
+
+        // ListView SEPARATED
+       /* child: ListView.separated(
+            itemCount: 20,
+            itemBuilder: ( context, index) {
+              return ListTile(
+                title: Text('Student No - $index', style: TextStyle(color: Colors.deepOrange),),
+              );
+            },
+            separatorBuilder: ( context, index) {
+              return Divider( thickness: 5,);
+            },
+        ),*/
+
+        child: ListView.separated(
+            itemCount: studentName.length,
+            itemBuilder: (context,index){
+              return ListTile(
+              title: Text(studentName[index], style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
+              );
+            },
+            separatorBuilder: (context,index){
+              return Divider(height: 20, thickness: 4,);
+            },
+
+      ),
+      )
     );
   }
 }
