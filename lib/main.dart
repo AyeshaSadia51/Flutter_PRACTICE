@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main()
-{
+void main() {
   runApp(MyApp());
 }
-class MyApp extends StatelessWidget{
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,28 +13,46 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-class HomeScreen extends StatelessWidget{
 
-  List<String> studentName = ['Ayesha','Ferdous','Sadia','Tanvir','Shakib','Shakil','Jawad','Rabeya','Jannat'];
+class HomeScreen extends StatelessWidget {
+  List<String> studentName = [
+    'Ayesha',
+    'Ferdous',
+    'Sadia',
+    'Tanvir',
+    'Shakib',
+    'Shakil',
+    'Jawad',
+    'Rabeya',
+    'Jannat'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        title: Text('List',style: TextStyle(
-            fontSize: 26
-        ),),
-        leading: Icon(Icons.list_alt,size: 25,),
-        actions: [Icon(Icons.arrow_forward,size: 25,)],
-      ),
+        appBar: AppBar(
+          backgroundColor: Colors.blueAccent,
+          title: Text(
+            'List',
+            style: TextStyle(fontSize: 26),
+          ),
+          leading: Icon(
+            Icons.list_alt,
+            size: 25,
+          ),
+          actions: [
+            Icon(
+              Icons.arrow_forward,
+              size: 25,
+            )
+          ],
+        ),
+        body: Scrollbar(
+          thickness: 15,
+          radius: Radius.circular(20),
 
-      body: Scrollbar(
-        thickness: 15,
-        radius: Radius.circular(20),
-
-        // GRIDVIEW BUILDER
-        /* child: GridView.builder(
+          // GRIDVIEW BUILDER
+          /* child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3
               ),
@@ -51,8 +69,8 @@ class HomeScreen extends StatelessWidget{
               }
           )     */
 
-        // LISTVIEW BUILDER
-        /*child: ListView.builder(
+          // LISTVIEW BUILDER
+          /*child: ListView.builder(
           itemCount: 20,
             itemBuilder: (context, index) {
               return ListTile(
@@ -61,8 +79,8 @@ class HomeScreen extends StatelessWidget{
             }
         ),*/
 
-        // ListView SEPARATED
-       /* child: ListView.separated(
+          // ListView SEPARATED
+          /* child: ListView.separated(
             itemCount: 20,
             itemBuilder: ( context, index) {
               return ListTile(
@@ -74,19 +92,22 @@ class HomeScreen extends StatelessWidget{
             },
         ),*/
 
-        child: ListView.separated(
+          child: ListView.separated(
             itemCount: studentName.length,
-            itemBuilder: (context,index){
+            itemBuilder: (context, index) {
               return ListTile(
-              title: Text(studentName[index], style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
+                title: Text(studentName[index],
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
               );
             },
-            separatorBuilder: (context,index){
-              return Divider(height: 20, thickness: 4,);
+            separatorBuilder: (context, index) {
+              return Divider(
+                height: 20,
+                thickness: 4,
+              );
             },
-
-      ),
-      )
-    );
+          ),
+        ));
   }
 }
