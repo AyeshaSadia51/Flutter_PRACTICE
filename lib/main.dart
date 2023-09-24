@@ -67,9 +67,10 @@ class ProductListScreen extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) => ProductDetails(productName: index.toString(),)
-                  ));
+                  )).then((value) {
+                    print(value);
+                  });
                 },
-
               );
             })
     );
@@ -94,13 +95,19 @@ class ProductDetails extends StatelessWidget{
 
       ),
       body: Center(
-        child: Text(productName, style: TextStyle(fontSize: 24),),
-
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(productName, style: TextStyle(fontSize: 24),),
+            ElevatedButton(onPressed:(){
+              Navigator.pop(context,'Product Name - $productName');
+            },
+                child: Text('Back'))
+          ],
+        ),
       ),
     );
   }
-
 }
 
-/// Route
 
