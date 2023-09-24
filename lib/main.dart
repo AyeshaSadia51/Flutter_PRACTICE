@@ -5,110 +5,97 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomeScreen(),
-      title: 'Practice APP',
-    );
-  }
-}
 
-/// Route
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blueAccent,
-          title: Text('Home Page',
-            style: TextStyle(fontSize: 26),
+      ///LIGHT THEME MODE
+      theme: ThemeData(
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.deepOrange,
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)
+                ),
+                elevation: 5,
+                textStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.6,
+                    wordSpacing: 0.5
+                )
+            ),
           ),
-          leading: Icon(Icons.home, size: 25,
+          textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                  textStyle: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600
+                  ),
+                  foregroundColor: Colors.deepOrange
+              )
           ),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('HOME',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-              ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ProductListScreen()));
-                  },
-                  child: Text('Product List')
-              ),
-            ],
+          appBarTheme: AppBarTheme(
+              backgroundColor: Colors.pink,
+              elevation: 5,
+              shadowColor: Colors.green
           ),
-        ));
-  }
-}
+          textTheme: TextTheme(
+            bodyMedium: TextStyle(
+                fontSize: 18
+            ),
+            bodySmall: TextStyle(
+                fontSize: 10
+            ),
+            bodyLarge: TextStyle(
+                fontSize: 22
+            ),
+          )
+      ),
 
-/// Route
-class ProductListScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.pink,
-          title: Text('Product List',
-            style: TextStyle(fontSize: 24),
-          ),
-          actions: [Icon(Icons.production_quantity_limits, size: 25,)]
+      /// DARK THEME MODE
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        appBarTheme: AppBarTheme(
+            backgroundColor: Colors.deepOrange,
+            elevation: 5,
+            shadowColor: Color(0xFF510622)
         ),
-        body: ListView.builder(
-          itemCount: 20,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(index.toString()),
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => ProductDetails(productName: index.toString())
-                  )).then((value) {
-                    print(value);
-                  });
-                },
-              );
-            })
+      ),
+      themeMode: ThemeMode.dark,
     );
   }
 }
 
 
-/// Route
-class ProductDetails extends StatelessWidget{
-  final String productName;
-  final double? price;
-  const ProductDetails({super.key, required this.productName, this.price});
-
+class HomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        title: Text('Product Details',
-          style: TextStyle(fontSize: 26),
-        ),
-        actions: [Icon(Icons.details, size: 25)]
-
+        title: Text('Home'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(productName, style: TextStyle(fontSize: 24),),
-            ElevatedButton(onPressed:(){
-              Navigator.pop(context,'Product Name - $productName');
-            },
-                child: Text('Back'))
+            Text('Ayeshaaa'),
+            Text('Ayeshaaa',style: Theme.of(context).textTheme.bodySmall,),
+            Text('Ayeshaaa',style: Theme.of(context).textTheme.bodyLarge,),
+            ElevatedButton(onPressed: (){}, child: Text('Submit')),
+            TextButton(onPressed: (){} , child: Text('Click')),
           ],
         ),
-      ),
+      )
     );
+
   }
+
 }
 
 
