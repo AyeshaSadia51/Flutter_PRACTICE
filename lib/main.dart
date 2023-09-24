@@ -66,7 +66,7 @@ class ProductListScreen extends StatelessWidget {
                 title: Text(index.toString()),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => ProductDetails(productName: index.toString(),)
+                    builder: (context) => ProductDetails(productName: index.toString())
                   )).then((value) {
                     print(value);
                   });
@@ -81,7 +81,8 @@ class ProductListScreen extends StatelessWidget {
 /// Route
 class ProductDetails extends StatelessWidget{
   final String productName;
-  const ProductDetails({super.key, required this.productName});
+  final double? price;
+  const ProductDetails({super.key, required this.productName, this.price});
 
   @override
   Widget build(BuildContext context) {
