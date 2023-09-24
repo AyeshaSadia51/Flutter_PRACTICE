@@ -37,17 +37,10 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SettingsScreen()));
+                        MaterialPageRoute(builder: (context) => ProductListScreen()));
                   },
-                  child: Text('Go to Settings')
+                  child: Text('Product List')
               ),
-              ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => OrderScreen()));
-                  },
-                  child: Text('Go to Order')
-              )
             ],
           ),
         ));
@@ -55,84 +48,59 @@ class HomeScreen extends StatelessWidget {
 }
 
 /// Route
-class SettingsScreen extends StatelessWidget {
+class ProductListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pink,
-          title: Text('Settings Page',
+          title: Text('Product List',
             style: TextStyle(fontSize: 24),
           ),
-          actions: [Icon(Icons.settings, size: 25,)]
+          actions: [Icon(Icons.production_quantity_limits, size: 25,)]
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('SETTINGS',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-              ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushAndRemoveUntil(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
-                        (route) => false,
-                    );
-                  },
-                  child: Text('Go to Home'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink
-                ),
-              )
-            ],
-          ),
-        ));
+        body: ListView.builder(
+          itemCount: 20,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(index.toString()),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => ProductDetails(productName: index.toString(),)
+                  ));
+                },
+
+              );
+            })
+    );
   }
 }
 
+
 /// Route
-class OrderScreen extends StatelessWidget {
+class ProductDetails extends StatelessWidget{
+  final String productName;
+  const ProductDetails({super.key, required this.productName});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          title: Text('Order Page',
-            style: TextStyle(fontSize: 26),
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+        title: Text('Product Details',
+          style: TextStyle(fontSize: 26),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('ORDER',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-              TextButton(
-                  onPressed: (){
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => SettingsScreen()));
-                  },
-                  child: Text('Go to Settings', style: TextStyle(
-                      color: Colors.green, fontSize: 18
-                  ),),
+        actions: [Icon(Icons.details, size: 25)]
 
+      ),
+      body: Center(
+        child: Text(productName, style: TextStyle(fontSize: 24),),
 
-              ),
-              TextButton(
-                onPressed: (){
-                  Navigator.pop(context);
-                },
-                child: Text('Back to Home', style: TextStyle(
-                    color: Colors.green, fontSize: 18
-                ),),
-
-
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
+
 }
+
+/// Route
+
