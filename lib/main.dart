@@ -20,6 +20,7 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+
       navigationBar: CupertinoNavigationBar(
         leading: Icon(CupertinoIcons.home),
         middle: Text('Home'),
