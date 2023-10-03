@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main(){
   runApp(MyApp());
 }
 
@@ -9,84 +9,85 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return MaterialApp(
-     home: Home(),
-   );
+    return const MaterialApp(
+      home: CounterScreen(),
+    );
   }
 }
 
-class Home extends StatelessWidget{
-  const Home({super.key});
+class CounterScreen extends StatefulWidget {
+  const CounterScreen({super.key});
+  @override
+  State<CounterScreen> createState() => _CounterScreenState();
+}
+
+class _CounterScreenState extends State<CounterScreen> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-       title: Text('Home'),
-     ),
-     body: Column(
-       children: [
-         Switch(value: true, onChanged: (bool value) {}),
-         ElevatedButton(
-             onPressed: (){
-               showDialog(
-                   barrierDismissible: false,
-                   context: context, builder: (context){
-                 return AlertDialog(
-                   title: Text('False Alert'),
-                   content: Text('Try Again'),
-                   actions: [
-                     TextButton(
-                         onPressed: (){
-                           Navigator.pop(context);
-                         }, child: Text('Cancel')),
-                     TextButton(
-                         onPressed: (){
-                           Navigator.pop(context);
-                         }, child: Text('Ok')),
-                   ],
-                 );
-               });
-             },
-             child: Text('Submit')
-         ),
-         ElevatedButton(
-             onPressed: (){
-               showAboutDialog(context: context,
-               applicationName: "PickaCHuu",
-                 applicationVersion: '1.0.2',
-                 children: [
-                   Text('Application only for children under 15 age !')
-                 ]
-               );
-             }, child: Text('About')),
-         ElevatedButton(
-             onPressed: (){
-               showModalBottomSheet(
-                 isDismissible: false,
-                 barrierColor: Colors.blue,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.only(
-                     topLeft: Radius.circular(40),
-                     topRight: Radius.circular(40),
-                   )
-                 ),
-                   context: context, builder: (context){
-                 return Padding(
-                   padding: const EdgeInsets.all(8.0),
-                   child: Column(
-                     children: [
-                       Center(
-                         child: Text('This is Bottom Sheet'),
-                       )
-                     ],
-                   ),
-                 );
-               });
-             }, child: Text('Bottom Sheet')),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Counter App'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              counter.toString(),
+              style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProfileScreen(userName: 'Ayesha Ferdous Sadia'),
+                    ),
+                  );
+                },
+                child: Text('Go to Profile'))
+          ],
+        ),
 
-       ],
-     ),
-   );
-  }}
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            counter ++;
+           // print(counter);
+            setState(() {});
+          },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+
+
+/// Pass a Variable in constructor
+
+class ProfileScreen extends StatefulWidget {
+  final String userName;
+  const ProfileScreen({super.key, required this.userName});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profile'),
+      ),
+      body: Center(
+        child: Text(widget.userName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),),
+      ),
+    );
+  }
+}
 
 
