@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class HomeScreen extends StatelessWidget{
 
@@ -10,55 +11,15 @@ class HomeScreen extends StatelessWidget{
       appBar: AppBar(
         title: Text('Responsive'),
       ),
-      body: Center(
-        child: Stack(
-          children: [
-            Container(
-              height: 400,
-              width: 400,
-              color: Colors.pink,
+      body: ResponsiveBuilder(
+        builder: (context, sizeInformation){
+          return Center(
+            child: Text(
+                sizeInformation.deviceScreenType.toString()
             ),
-            Container(
-              height: 250,
-              width: 300,
-              color: Colors.purple,
-            ),
-            Positioned.fill(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Stack(
-                  children:[
-                    Container(
-                      height: 150,
-                      width: 200,
-                      color: Colors.yellow,
-                    ),
-                    Positioned.fill(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          height: 90,
-                          width: 90,
-                          color: Colors.black45,
-                        ),
-                      ),
-                    ),
-                  ]
-                ),
-              ),
-            ),
-            Positioned(
-              left: 0,
-              top: 0,
-              child: Container(
-                height: 150,
-                width: 150,
-                color: Colors.green,
-              ),
-            ),
+          );
 
-          ],
-        ),
+        },
       )
     );
   }
