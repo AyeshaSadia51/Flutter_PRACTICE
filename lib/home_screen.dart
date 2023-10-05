@@ -14,13 +14,13 @@ class HomeScreen extends StatelessWidget{
         child: Stack(
           children: [
             Container(
-              height: 200,
-              width: 200,
+              height: 400,
+              width: 400,
               color: Colors.pink,
             ),
             Container(
-              height: 150,
-              width: 150,
+              height: 250,
+              width: 300,
               color: Colors.purple,
             ),
             Positioned.fill(
@@ -29,16 +29,16 @@ class HomeScreen extends StatelessWidget{
                 child: Stack(
                   children:[
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: 150,
+                      width: 200,
                       color: Colors.yellow,
                     ),
                     Positioned.fill(
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
-                          height: 50,
-                          width: 50,
+                          height: 90,
+                          width: 90,
                           color: Colors.black45,
                         ),
                       ),
@@ -51,8 +51,8 @@ class HomeScreen extends StatelessWidget{
               left: 0,
               top: 0,
               child: Container(
-                height: 50,
-                width: 50,
+                height: 150,
+                width: 150,
                 color: Colors.green,
               ),
             ),
