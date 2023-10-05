@@ -10,99 +10,55 @@ class HomeScreen extends StatelessWidget{
       appBar: AppBar(
         title: Text('Responsive'),
       ),
-      body: Column(
-        children: [
-          // AspectRatio
-          AspectRatio(
-              aspectRatio: 16/4,
-              child: Container(
-                color: Colors.amber,
-                child: Image.network('https://gifdb.com/images/high/cute-cartoon-peach-cat-dance-mmqdbpqu279gtdz0.webp', fit: BoxFit.cover),
-              ),
-          ),
-
-          // FractionallySizedBox
-          Container(
-            //width: MediaQuery.sizeOf(context).width,
-            //height: MediaQuery.sizeOf(context).width,
-            width: MediaQuery.sizeOf(context).width,
-            height: 250,
-            color: Colors.pink,
-            child: FractionallySizedBox(
-              widthFactor: 0.5,
-              heightFactor: 0.7,
-              child: Container(
-                color: Colors.amber,
-                child: Image.network('https://gifdb.com/images/high/cute-cartoon-peach-cat-dance-mmqdbpqu279gtdz0.webp', fit: BoxFit.cover),
-              ),
+      body: Center(
+        child: Stack(
+          children: [
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.pink,
             ),
-          ),
-
-          // Flexible
-          Flexible(
-            fit: FlexFit.tight,
-              flex: 2,
-              child: Container(
-                color: Colors.amber,
-                width: MediaQuery.sizeOf(context).width,
-              )
-          ),
-
-          Flexible(
-            fit: FlexFit.tight,
-            flex: 1,
-            child: Row(
-              children: [
-                Flexible(
-                  child: Container(
-                    color: Colors.black,
-                    width: MediaQuery.sizeOf(context).width,
-                  ),
+            Container(
+              height: 150,
+              width: 150,
+              color: Colors.purple,
+            ),
+            Positioned.fill(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Stack(
+                  children:[
+                    Container(
+                      height: 100,
+                      width: 100,
+                      color: Colors.yellow,
+                    ),
+                    Positioned.fill(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          color: Colors.black45,
+                        ),
+                      ),
+                    ),
+                  ]
                 ),
-                Flexible(
-                  flex: 2,
-                  child: Container(
-                    color: Colors.blueGrey,
-                    width: MediaQuery.sizeOf(context).width,
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-
-          Flexible(
-              fit: FlexFit.tight,
-              flex: 3,
+            Positioned(
+              left: 0,
+              top: 0,
               child: Container(
+                height: 50,
+                width: 50,
                 color: Colors.green,
-                width: MediaQuery.sizeOf(context).width,
-              )
-          ),
+              ),
+            ),
 
-          // Expanded
-          Expanded(
-            flex: 2,
-              child: Container(
-                color: Colors.purple,
-              )
-          ),
-          Expanded(
-            flex: 3,
-              child: Container(
-                color: Colors.deepOrangeAccent,
-                width: double.infinity,
-                alignment: Alignment.center,
-                child: SizedBox(
-                  width:200,
-                  height: 60,
-                  child: FittedBox(
-                    child: Text('Ayesha Ferdous Sadia', style: TextStyle(fontWeight: FontWeight.bold),),
-                  ),
-
-                ),
-              )
-          )
-        ],
+          ],
+        ),
       )
     );
   }
