@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatelessWidget{
 
@@ -15,7 +16,10 @@ class HomeScreen extends StatelessWidget{
         builder: (context, sizeInformation){
           return Center(
             child: Text(
-                sizeInformation.deviceScreenType.toString()
+                sizeInformation.deviceScreenType.toString(),
+                style: TextStyle(
+                  fontSize: 15.sp
+                ),
             ),
           );
 
