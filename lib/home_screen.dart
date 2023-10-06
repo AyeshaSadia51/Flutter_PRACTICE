@@ -16,9 +16,11 @@ class HomeScreen extends StatelessWidget{
         builder: (context, sizeInformation){
           return Center(
             child: Text(
-                sizeInformation.deviceScreenType.toString(),
+                //sizeInformation.deviceScreenType.toString(),
+              'Ayesha Ferdous Sadia',
                 style: TextStyle(
-                  fontSize: 15.sp
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.bold
                 ),
             ),
           );
