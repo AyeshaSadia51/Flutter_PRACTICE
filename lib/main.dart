@@ -8,7 +8,7 @@ import 'package:sizer/sizer.dart';
 void main(){
 runApp(
     DevicePreview(
-      enabled: kDebugMode, // kReleaseMode
+      enabled: kReleaseMode , //  kDebugMode
       builder: (context){
       return MyApp();
       },
