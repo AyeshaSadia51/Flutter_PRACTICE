@@ -1,35 +1,17 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/home_screen.dart';
-import 'package:sizer/sizer.dart';
 
-
-void main(){
-runApp(
-    DevicePreview(
-      enabled: kDebugMode, // kReleaseMode
-      builder: (context){
-      return MyApp();
-      },
-),
-);
+void main() {
+  runApp(const TodoApp());
 }
 
-class MyApp extends StatelessWidget{
-  const MyApp({super.key});
-
+class TodoApp extends StatelessWidget {
+  const TodoApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        print(deviceType);
-        return MaterialApp(
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
-          home: HomeScreen(),
-        );
-      }
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
