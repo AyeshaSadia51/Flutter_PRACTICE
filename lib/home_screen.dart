@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text(
           'TODO',
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 21),
         ),
         backgroundColor: Colors.pinkAccent,
         actions: const [Icon(Icons.today_outlined)],
