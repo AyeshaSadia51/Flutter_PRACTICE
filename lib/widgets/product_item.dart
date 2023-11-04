@@ -3,7 +3,6 @@ import 'package:flutter_practice/screens/add_new_product_screen.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ListTile(
